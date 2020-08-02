@@ -1,7 +1,5 @@
 import React from 'react';
 
-import Circles from './components/Circles';
-import ScatterPlot from './components/ScatterPlot';
 import BarChart from './components/BarChart';
 import BarChartInteractive from './components/BarChartInteractive'
 import './App.css';
@@ -20,10 +18,12 @@ const App = () => {
 
     return (
         <div className="ui container">
-            <Circles data={dataset} x={0} y={0} w={800} h={200}/>
-            <ScatterPlot data={dataset_2d} x={0} y={0} w={800} h={200}/>
-            <BarChart data={dataset} x={0} y={0} w={800} h={200}/>
-            <BarChartInteractive dataset={dataset} x={0} y={0} w={800} h={200} />
+            <div className='ui padded segment'>
+                <BarChart data={dataset} x={0} y={10} w={800} h={200}/>
+            </div>
+            <div className='ui padded segment'>
+                <BarChartInteractive dataset={dataset} x={0} y={10} w={800} h={200} />
+            </div>
         </div>
     );
 };

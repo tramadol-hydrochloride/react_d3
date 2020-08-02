@@ -4,28 +4,25 @@ import {max} from 'd3-array';
 
 import Axis from './Axis';
 
-const ScatterPlot = ({data, x, y, w, h}) => {
+const ScatterPlot = ({data, x, y, w, h, padding}) => {
 
     const scale_x = scaleLinear()
         .domain([0, max(data, d => d[0])])
-        .range([0, w]);
+        .range([padding, w - padding]);
 
     const scale_y = scaleLinear()
         .domain([0, max(data, d => d[1])])
-        .range([0, h]);
+        .range([h - padding, padding]);
 
     return (
         <svg width={w} height={h}>
             <g transform={`translate(${x}, ${y})`}>
                 {data.map((d, i) => (
-                    <circle
-                        cx={scale_x(d[0])}
-                        cy={scale_y(d[1])}
-                        r={Math.sqrt(h - d[1])}
-                        key={i}/>
+                    <circle cx={scale_x(d[0])} cy={scale_y(d[1])} r={4} key={i}/>
                 ))}
 
-                <Axis x={0} y={h} scale={scale_x} axis_func='axisBottom'/>
+                <Axis x={0} y={h - padding} scale={scale_x} axis_func='axisBottom'/>
+                <Axis x={padding} y={0} scale={scale_y} axis_func='axisLeft'/>
             </g>
         </svg>
     );
