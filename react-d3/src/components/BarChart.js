@@ -15,7 +15,6 @@ const BarChart = ({data, x, y, w, h}) => {
 
     return (
         <svg width={w} height={h}>
-            <text x={x} y={y}>Bar Chart</text>
             <g transform={`translate(${x}, ${y})`}>
                 {data.map((d, i) => (
                     <g key={i}>

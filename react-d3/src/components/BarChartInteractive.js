@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
+import React, {useState, useReducer} from 'react';
 import {scaleBand, scaleLinear} from 'd3-scale';
-import {range as d3range, max as d3max} from 'd3-array';
+import { range as d3range, max as d3max} from 'd3-array';
 
 import Bar from './Bar';
 
@@ -36,10 +36,15 @@ const BarChartInteractive = ({dataset, x, y, w, h}) => {
         setData(new_arr);
     };
 
+    const sort_bar = () => {
+        let sorted_data = [...data];
+        sorted_data.sort((a, b) => a - b);
+        setData(sorted_data);
+    };
+
     return (
         <div>
             <svg width={w} height={h}>
-                <text x={0} y={10}>Bar Chart With Transition Effect</text>
                 <g transform={`translate(${x}, ${y})`}>
                     {data.map((d, i) => <Bar d={d} x={scale_x(i)} y={h - scale_y(d)}
                                                                  width={scale_x.bandwidth()} height={scale_y(d)} fill='teal'
@@ -54,6 +59,7 @@ const BarChartInteractive = ({dataset, x, y, w, h}) => {
                 <button onClick={update_bars} className='ui primary basic button'>Update Bars</button>
                 <button onClick={add_bar} className='ui primary basic button'>Add Bar</button>
                 <button onClick={remove_bar} className='ui primary basic button'>Remove Bar</button>
+                <button onClick={sort_bar} className='ui primary basic button'>Sort Bar</button>
             </div>
         </div>
     );

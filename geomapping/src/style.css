@@ -1,0 +1,7 @@
+/* points on the map */
+.point {
+    fill: yellow;
+    stroke: gray;
+    stroke-width: 0.25;
+    opacity: 0.75;
+}
