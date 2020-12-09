@@ -10,6 +10,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="JupyterTrust" id="2fec53db-e3e4-4f04-9733-7063028b9a47" />
   <component name="ProjectId" id="1fOavVQ4MlpKIeFxrVLTPdAW790" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -19,6 +20,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -34,6 +36,7 @@
       <option name="presentableId" value="Default" />
       <updated>1596091823906</updated>
       <workItem from="1596091853396" duration="28000" />
+      <workItem from="1597573069592" duration="33000" />
     </task>
     <servers />
   </component>
